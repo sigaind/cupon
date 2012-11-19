@@ -1,0 +1,59 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmZonaplantacion
+ *
+ * @ORM\Table(name="TM_ZonaPlantacion")
+ * @ORM\Entity
+ */
+class TmZonaplantacion
+{
+    /**
+     * @var integer $zonid
+     *
+     * @ORM\Column(name="zonId", type="smallint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $zonid;
+
+    /**
+     * @var string $zoncodigo
+     *
+     * @ORM\Column(name="zonCodigo", type="string", length=50, nullable=false)
+     */
+    private $zoncodigo;
+
+    /**
+     * @var string $zonnombre
+     *
+     * @ORM\Column(name="zonNombre", type="string", length=20, nullable=false)
+     */
+    private $zonnombre;
+
+    /**
+     * @var Empresa
+     *
+     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="empId", referencedColumnName="empId")
+     * })
+     */
+    private $empid;
+
+    /**
+     * @var SysEstadoregistros
+     *
+     * @ORM\ManyToOne(targetEntity="SysEstadoregistros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estId", referencedColumnName="estId")
+     * })
+     */
+    private $estid;
+
+
+}

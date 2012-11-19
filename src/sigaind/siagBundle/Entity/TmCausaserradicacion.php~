@@ -1,0 +1,49 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmCausaserradicacion
+ *
+ * @ORM\Table(name="TM_CausasErradicacion")
+ * @ORM\Entity
+ */
+class TmCausaserradicacion
+{
+    /**
+     * @var integer $cerrid
+     *
+     * @ORM\Column(name="cerrId", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $cerrid;
+
+    /**
+     * @var string $cerrnombre
+     *
+     * @ORM\Column(name="cerrNombre", type="string", length=30, nullable=true)
+     */
+    private $cerrnombre;
+
+    /**
+     * @var string $cerrdescripcion
+     *
+     * @ORM\Column(name="cerrDescripcion", type="string", length=150, nullable=true)
+     */
+    private $cerrdescripcion;
+
+    /**
+     * @var Empresa
+     *
+     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="empresa_id", referencedColumnName="empId")
+     * })
+     */
+    private $empresa;
+
+
+}

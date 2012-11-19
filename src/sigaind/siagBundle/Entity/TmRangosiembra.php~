@@ -1,0 +1,67 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmRangosiembra
+ *
+ * @ORM\Table(name="TM_RangoSiembra")
+ * @ORM\Entity
+ */
+class TmRangosiembra
+{
+    /**
+     * @var integer $ranid
+     *
+     * @ORM\Column(name="ranId", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $ranid;
+
+    /**
+     * @var integer $empid
+     *
+     * @ORM\Column(name="empId", type="bigint", nullable=false)
+     */
+    private $empid;
+
+    /**
+     * @var string $rancodigo
+     *
+     * @ORM\Column(name="ranCodigo", type="string", length=50, nullable=false)
+     */
+    private $rancodigo;
+
+    /**
+     * @var string $rannombre
+     *
+     * @ORM\Column(name="ranNombre", type="string", length=100, nullable=false)
+     */
+    private $rannombre;
+
+    /**
+     * @var integer $randesde
+     *
+     * @ORM\Column(name="ranDesde", type="integer", nullable=false)
+     */
+    private $randesde;
+
+    /**
+     * @var integer $ranhasta
+     *
+     * @ORM\Column(name="ranHasta", type="integer", nullable=false)
+     */
+    private $ranhasta;
+
+    /**
+     * @var integer $estid
+     *
+     * @ORM\Column(name="estId", type="smallint", nullable=true)
+     */
+    private $estid;
+
+
+}

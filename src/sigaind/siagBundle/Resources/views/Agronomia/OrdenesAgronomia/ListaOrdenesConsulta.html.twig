@@ -1,0 +1,53 @@
+
+    <table id='demotable1' class="tablaFiltro">
+      <thead>
+        <tr>
+            <th> ID </th>            
+            <th> FECHA CREACION </th>
+            <th> LABOR</th>
+            <th> LOTE </th>
+            <th> FECHA INICIO </th>
+            <th> FECHA FIN </th>
+            <th> CANTIDAD ACUMULADA </th>
+            <th> SUPERVISOR </th>
+            <th> ESTADO </th>
+            <th> VER </th>            
+        </tr>
+      </thead>
+      <tbody id="tblLabores">
+        {% for orden in ordenes %}
+            <tr id="{{orden.oreid}}">
+                    <td> {{orden.oreid }} </td>
+                    <td> {{orden.orefecha | date('d/m/Y')}} </td>
+                    <td> {{orden.nombre | title | trim}} </td>
+                    <td> {{orden.lotcodigo}} </td>
+                    <td> {{orden.orefechainicio | date('d/m/Y')}} </td>
+                    <td> {{orden.orefechafin | date('d/m/Y')}} </td>
+                    <td> {{orden.orecantidadacumulada| number_format(2, ',', '.')}} </td>
+                    <td> {{orden.tranombre | title | trim }} </td>                  
+                    <td>
+                        {% if orden.orecerrada == 0 %}
+                           Abierta
+                        {% else %}
+                          Cerrada
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="#">
+                            <img src="{{ asset('bundles/sigaind/images/window-new.png') }}" alt="Detalles" id="idImagen" onclick="detalleOrden({{orden.oreid}});"/> 
+                        </a>
+                    </td>
+
+            </tr>
+         {% else %}
+            <tr>
+                <td>
+                    NO EXISTEN DATOS PARA MOSTRAR
+                </td>
+            </tr>
+        {% endfor %}
+      <tbody>   
+  </table>
+<div>
+    <button type="button" onclick="CancelarConsultaLista()">Cancelar</button>
+</div>

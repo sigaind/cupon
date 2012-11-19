@@ -1,0 +1,7 @@
+parameters:
+#    sig.example.class: sigaind\sigBundle\Example
+
+services:
+#    sig.example:
+#        class: %sig.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

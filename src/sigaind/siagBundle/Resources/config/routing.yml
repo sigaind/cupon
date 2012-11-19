@@ -1,0 +1,116 @@
+usuario_login:
+    pattern:  /login
+    defaults: { _controller: siagBundle:Default:login }
+    
+usuario_login_check:
+    pattern: /login_check
+
+usuario_logout:
+    pattern: /logout
+
+registro_usuarios:
+    pattern: /seguridad/usuario/registro
+    defaults: { _controller: siagBundle:seguridad:registro }
+    
+insercion_usuarios:
+    pattern: /seguridad/usuario/insert
+    defaults: { _controller: siagBundle:seguridad:insert }    
+    
+    
+    
+index:
+    pattern:  /index/
+    defaults: { _controller: siagBundle:Default:index }
+    
+lista_laboresSinAprobar_reportadas:
+    pattern:  /operacional/laboresSinAprobar/lista
+    defaults: { _controller: siagBundle:LaboresSinAprobar:LaboresSinAprobar }
+    
+eliminar_laborSinRevisar_reportadas:
+    pattern:  /operacional/laboresSinAprobar/eliminar
+    defaults: { _controller: siagBundle:LaboresSinAprobar:EliminarLabor }
+
+actualizar_laborSinRevisar_reportadas:
+    pattern:  /operacional/laboresSinAprobar/aprobar
+    defaults: { _controller: siagBundle:LaboresSinAprobar:AprobarLabores }
+    
+    
+view_labores_reportadas:
+    pattern:  /operacional/laboresReportadas/vew
+    defaults: { _controller: siagBundle:LaboresReportadas:ver }
+    
+consulta_porfechas_labores_reportadas:
+    pattern:  /operacional/laboresReportadas/Consulta
+    defaults: { _controller: siagBundle:LaboresReportadas:Consulta }
+    
+eliminar_labor_reportada:
+    pattern:  /operacional/laboresReportadas/Eliminar
+    defaults: { _controller: siagBundle:LaboresReportadas:EliminarLabor }
+    
+exportarExcel_labores_reportada:
+    pattern:  /operacional/laboresReportadas/ExportarExcel
+    defaults: { _controller: siagBundle:LaboresReportadas:ExportarExcel }
+    
+exportarPDF_labores_reportada:
+    pattern:  /operacional/laboresReportadas/ExportarPdf
+    defaults: { _controller: siagBundle:LaboresReportadas:ExportarPdf }
+    
+index_ordenes_agronomia:
+    pattern:  /operacional/OrdenesAgronomia/index
+    defaults: { _controller: siagBundle:OrdenesAgronomia:index }
+    
+insert_ordenes_agronomia:
+    pattern:  /operacional/OrdenesAgronomia/insert
+    defaults: { _controller: siagBundle:OrdenesAgronomia:insert }
+    
+consulta_ordenes_agronomia:
+    pattern:  /operacional/OrdenesAgronomia/ConsultaLista
+    defaults: { _controller: siagBundle:OrdenesAgronomia:Consulta }
+    
+detalle_ordenes_agronomia:
+    pattern:  /operacional/OrdenesAgronomia/DetalleOrden
+    defaults: { _controller: siagBundle:OrdenesAgronomia:DetalleOrden }
+    
+cerrar_ordenes_agronomia:
+    pattern:  /operacional/OrdenesAgronomia/cerrarOrden
+    defaults: { _controller: siagBundle:OrdenesAgronomia:cerrarOrden }
+    
+ 
+informes_labores_programadas:
+    pattern:  /informes/agronomia/laboresprogramadas
+    defaults: { _controller: siagBundle:InformesAgronomia:index }
+    
+
+    
+autocomplete_labores:
+    pattern:  /autocomplete/labores
+    defaults: { _controller: siagBundle:Autocomplete:Labor }
+    
+autocomplete_lotes:
+    pattern:  /autocomplete/lotes
+    defaults: { _controller: siagBundle:Autocomplete:Lotes }
+   
+autocomplete_trabajadores:
+    pattern:  /autocomplete/trabajadores
+    defaults: { _controller: siagBundle:Autocomplete:Trabajadores }
+    
+autocomplete_trabajadores_todos:
+    pattern:  /autocomplete/trabajadoresdos
+    defaults: { _controller: siagBundle:Autocomplete:Trabajadores }
+    
+    
+erradicar_palmas:
+    pattern:  /operacional/sanidad/ErradicarPalma
+    defaults: { _controller: siagBundle:ErradicarPalmas:index }
+    
+erradicar_palmas_consulta:
+    pattern:  /operacional/sanidad/Consulta
+    defaults: { _controller: siagBundle:ErradicarPalmas:Consulta }
+    
+consulta_causas_erradicacion_todas:
+    pattern:  /operacional/sanidad/Consulta/CausasErradicacion
+    defaults: { _controller: siagBundle:ErradicarPalmas:ConsultaCaudasErradicacion }
+    
+erradicar_palmas_insertar:
+    pattern:  /operacional/sanidad/insert
+    defaults: { _controller: siagBundle:ErradicarPalmas:insert }

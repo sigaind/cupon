@@ -1,0 +1,74 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TtPolinizacion
+ *
+ * @ORM\Table(name="TT_Polinizacion")
+ * @ORM\Entity
+ */
+class TtPolinizacion
+{
+    /**
+     * @var integer $cpolid
+     *
+     * @ORM\Column(name="cpolId", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $cpolid;
+
+    /**
+     * @var integer $lotid
+     *
+     * @ORM\Column(name="lotId", type="bigint", nullable=true)
+     */
+    private $lotid;
+
+    /**
+     * @var integer $cpollinea
+     *
+     * @ORM\Column(name="cpolLinea", type="integer", nullable=true)
+     */
+    private $cpollinea;
+
+    /**
+     * @var integer $cpolpalma
+     *
+     * @ORM\Column(name="cpolPalma", type="integer", nullable=true)
+     */
+    private $cpolpalma;
+
+    /**
+     * @var integer $cpolflorespolinizadas
+     *
+     * @ORM\Column(name="cpolFloresPolinizadas", type="integer", nullable=true)
+     */
+    private $cpolflorespolinizadas;
+
+    /**
+     * @var \DateTime $cpolfecha
+     *
+     * @ORM\Column(name="cpolFecha", type="datetime", nullable=true)
+     */
+    private $cpolfecha;
+
+    /**
+     * @var string $traid
+     *
+     * @ORM\Column(name="traId", type="string", length=10, nullable=true)
+     */
+    private $traid;
+
+    /**
+     * @var string $a11010601
+     *
+     * @ORM\Column(name="a11010601", type="string", length=22, nullable=true)
+     */
+    private $a11010601;
+
+
+}

@@ -1,0 +1,7 @@
+parameters:
+#    integracion.example.class: sigaind\integracionBundle\Example
+
+services:
+#    integracion.example:
+#        class: %integracion.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

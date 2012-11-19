@@ -1,0 +1,122 @@
+{% extends 'siagBundle::layoutMaestra.html.twig' %}
+
+{% block title %}Ordenes Agronomia{% endblock %}
+
+{% block head %}
+<link href="{{ asset('bundles/sonatajquery/themes/base/jquery.ui.theme.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/sonatajquery/themes/base/jquery.ui.datepicker.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/sonatajquery/themes/base/jquery.ui.autocomplete.css') }}" rel="stylesheet" type="text/css" />
+
+<script src="{{ asset('bundles/sigaind/js/table.filter.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/sigaind/js/agronomia/OrdenesAgronomia.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        inicio();        
+    });
+</script>
+
+<style>
+    .ui-autocomplete-loading {
+        background: white url('{{ asset('bundles/sigaind/images/loader.gif') }}') right center no-repeat;
+    }
+</style>
+{% endblock %}
+    
+{% block content %}
+
+<div id="botones">
+    <button type="button" onclick="NuevaOrden()">Nueva Orden</button>
+    <button type="reset" onclick="Consulta()">Buscar</button>
+</div>
+
+<div id="consulta" style="display: none">
+
+    <table id='demotable1' class="tablaFiltro">      
+      <tbody id="tblFormConsulta">
+            <tr>
+                    <td> Orden ID: </td>
+                    <td>
+                        <input type="text" id="ordenId" />
+                    </td>
+            </tr>
+            <tr>
+                    <td> Labor: </td>
+                    <td>
+                        <input type="text" id="labor" name="" />
+                    </td>
+            </tr>
+            <tr>
+                    <td> Lote: </td>
+                    <td>
+                        <input type="text" id="lote" />
+                    </td>
+            </tr>
+            <tr>
+                    <td> Fecha Creacion: </td>
+                    <td>
+                        <input type="text" id="fechaCreacion" />
+                    </td>
+            </tr>
+            <tr>
+                    <td> Estado: </td>
+                    <td> 
+                        <select id="estado"> 
+                            <option value="-1">--</option>
+                            <option value="0">Abiertas</option>
+                            <option value="1">Cerradas</option>
+                        </select>
+                    </td>
+            </tr>
+      <tbody>   
+  </table> 
+    <button type="button" onclick="consultarOrdenes()">Aceptar</button>
+    <button type="button" onclick="CancelarConsulta()">Cancelar</button>
+</div>
+
+<div id="formulario" style="display: none">
+
+    <table id='demotable1' class="tablaFiltro">      
+      <tbody id="tblFormConsulta">            
+            <tr>
+                    <td> Labor: </td>
+                    <td>
+                        <input type="text" id="laborG" name="" />
+                    </td>
+            </tr>
+            <tr>
+                    <td> Lote: </td>
+                    <td>
+                        <input type="text" id="loteG" />
+                    </td>
+            </tr>            
+            <tr>
+                    <td> Fecha Inicio: </td>
+                    <td>
+                        <input type="text" id="f1G" />
+                    </td>
+            </tr>
+            <tr>
+                    <td> Fecha Final: </td>
+                    <td> 
+                        <input type="text" id="f2G" />
+                    </td>
+            </tr>
+            <tr>
+                    <td> Supervisor: </td>
+                    <td>
+                        <input type="text" id="supervisor" />
+                    </td>
+            </tr>
+      <tbody>   
+  </table> 
+    <button type="button" onclick="GuardarOrdenes()">Guardar</button>
+    <button type="button" onclick="CancelarNuevaOrden()">Cancelar</button>
+</div>
+
+<div id="divTabla" style="display: none">
+    <div id="info"></div>        
+</div>
+<div id="divDetalle" style="display: none">
+    <div id="oreDetalle"></div>        
+</div>
+{% endblock %}

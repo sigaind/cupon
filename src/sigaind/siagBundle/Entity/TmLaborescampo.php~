@@ -1,0 +1,155 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmLaborescampo
+ *
+ * @ORM\Table(name="TM_LaboresCampo")
+ * @ORM\Entity
+ */
+class TmLaborescampo
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $codigo
+     *
+     * @ORM\Column(name="codigo", type="string", length=15, nullable=false)
+     */
+    private $codigo;
+
+    /**
+     * @var string $nombre
+     *
+     * @ORM\Column(name="nombre", type="string", length=50, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string $cuentacontable
+     *
+     * @ORM\Column(name="cuentacontable", type="string", length=50, nullable=true)
+     */
+    private $cuentacontable;
+
+    /**
+     * @var integer $periodicidad
+     *
+     * @ORM\Column(name="periodicidad", type="integer", nullable=true)
+     */
+    private $periodicidad;
+
+    /**
+     * @var integer $nivelriesgo
+     *
+     * @ORM\Column(name="nivelriesgo", type="smallint", nullable=true)
+     */
+    private $nivelriesgo;
+
+    /**
+     * @var integer $loteId
+     *
+     * @ORM\Column(name="lote_id", type="integer", nullable=true)
+     */
+    private $loteId;
+
+    /**
+     * @var integer $rangosiembrainicial
+     *
+     * @ORM\Column(name="rangosiembrainicial", type="smallint", nullable=true)
+     */
+    private $rangosiembrainicial;
+
+    /**
+     * @var integer $rangosiembrafinal
+     *
+     * @ORM\Column(name="rangosiembrafinal", type="smallint", nullable=true)
+     */
+    private $rangosiembrafinal;
+
+    /**
+     * @var float $costocontratista
+     *
+     * @ORM\Column(name="costocontratista", type="decimal", nullable=true)
+     */
+    private $costocontratista;
+
+    /**
+     * @var float $costotrabajador
+     *
+     * @ORM\Column(name="costotrabajador", type="decimal", nullable=true)
+     */
+    private $costotrabajador;
+
+    /**
+     * @var TmTipocontrollabor
+     *
+     * @ORM\ManyToOne(targetEntity="TmTipocontrollabor")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="tipocontrol_id", referencedColumnName="tcoId")
+     * })
+     */
+    private $tipocontrol;
+
+    /**
+     * @var TmTipolabor
+     *
+     * @ORM\ManyToOne(targetEntity="TmTipolabor")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="tipolabor_id", referencedColumnName="id")
+     * })
+     */
+    private $tipolabor;
+
+    /**
+     * @var SysEstadoregistros
+     *
+     * @ORM\ManyToOne(targetEntity="SysEstadoregistros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estadoregistro_id", referencedColumnName="estId")
+     * })
+     */
+    private $estadoregistro;
+
+    /**
+     * @var TmTipovinculacion
+     *
+     * @ORM\ManyToOne(targetEntity="TmTipovinculacion")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="vinculacion_id", referencedColumnName="id")
+     * })
+     */
+    private $vinculacion;
+
+    /**
+     * @var TmCecos
+     *
+     * @ORM\ManyToOne(targetEntity="TmCecos")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="ceco_id", referencedColumnName="cecId")
+     * })
+     */
+    private $ceco;
+
+    /**
+     * @var Empresa
+     *
+     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="empresa_id", referencedColumnName="empId")
+     * })
+     */
+    private $empresa;
+
+
+}

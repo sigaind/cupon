@@ -1,0 +1,90 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmTramparhynchop
+ *
+ * @ORM\Table(name="TM_TrampaRhynchop")
+ * @ORM\Entity
+ */
+class TmTramparhynchop
+{
+    /**
+     * @var integer $trhyid
+     *
+     * @ORM\Column(name="trhyId", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $trhyid;
+
+    /**
+     * @var string $codtampa
+     *
+     * @ORM\Column(name="codTampa", type="string", length=10, nullable=true)
+     */
+    private $codtampa;
+
+    /**
+     * @var integer $idtipohormona
+     *
+     * @ORM\Column(name="idTipoHormona", type="integer", nullable=true)
+     */
+    private $idtipohormona;
+
+    /**
+     * @var integer $linea
+     *
+     * @ORM\Column(name="linea", type="integer", nullable=true)
+     */
+    private $linea;
+
+    /**
+     * @var integer $palma
+     *
+     * @ORM\Column(name="palma", type="integer", nullable=true)
+     */
+    private $palma;
+
+    /**
+     * @var integer $cebid
+     *
+     * @ORM\Column(name="cebId", type="integer", nullable=true)
+     */
+    private $cebid;
+
+    /**
+     * @var TmLotes
+     *
+     * @ORM\ManyToOne(targetEntity="TmLotes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="lotId", referencedColumnName="id")
+     * })
+     */
+    private $lotid;
+
+    /**
+     * @var Empresa
+     *
+     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="empresa_id", referencedColumnName="empId")
+     * })
+     */
+    private $empresa;
+
+    /**
+     * @var SysEstadoregistros
+     *
+     * @ORM\ManyToOne(targetEntity="SysEstadoregistros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estadoregistro_id", referencedColumnName="estId")
+     * })
+     */
+    private $estadoregistro;
+
+
+}

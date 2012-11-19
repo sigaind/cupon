@@ -1,0 +1,109 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TtCensoplagas
+ *
+ * @ORM\Table(name="TT_CensoPlagas")
+ * @ORM\Entity
+ */
+class TtCensoplagas
+{
+    /**
+     * @var integer $cplaid
+     *
+     * @ORM\Column(name="cplaId", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $cplaid;
+
+    /**
+     * @var integer $cplaconsecutivo
+     *
+     * @ORM\Column(name="cplaConsecutivo", type="integer", nullable=true)
+     */
+    private $cplaconsecutivo;
+
+    /**
+     * @var \DateTime $cplafecha
+     *
+     * @ORM\Column(name="cplaFecha", type="datetime", nullable=false)
+     */
+    private $cplafecha;
+
+    /**
+     * @var integer $lotid
+     *
+     * @ORM\Column(name="lotId", type="integer", nullable=false)
+     */
+    private $lotid;
+
+    /**
+     * @var integer $cplalinea
+     *
+     * @ORM\Column(name="cplaLinea", type="smallint", nullable=false)
+     */
+    private $cplalinea;
+
+    /**
+     * @var integer $cplapalma
+     *
+     * @ORM\Column(name="cplaPalma", type="smallint", nullable=false)
+     */
+    private $cplapalma;
+
+    /**
+     * @var integer $traid
+     *
+     * @ORM\Column(name="traId", type="integer", nullable=false)
+     */
+    private $traid;
+
+    /**
+     * @var integer $plaid
+     *
+     * @ORM\Column(name="plaId", type="integer", nullable=false)
+     */
+    private $plaid;
+
+    /**
+     * @var integer $eplid
+     *
+     * @ORM\Column(name="eplId", type="integer", nullable=false)
+     */
+    private $eplid;
+
+    /**
+     * @var integer $cplacantidad
+     *
+     * @ORM\Column(name="cplaCantidad", type="smallint", nullable=false)
+     */
+    private $cplacantidad;
+
+    /**
+     * @var string $cplaobservacion
+     *
+     * @ORM\Column(name="cplaObservacion", type="string", length=50, nullable=true)
+     */
+    private $cplaobservacion;
+
+    /**
+     * @var string $a11010601
+     *
+     * @ORM\Column(name="a11010601", type="string", length=22, nullable=true)
+     */
+    private $a11010601;
+
+    /**
+     * @var boolean $exportado
+     *
+     * @ORM\Column(name="exportado", type="boolean", nullable=true)
+     */
+    private $exportado;
+
+
+}

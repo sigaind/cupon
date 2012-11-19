@@ -1,0 +1,73 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmTrabajadores
+ *
+ * @ORM\Table(name="TM_Trabajadores")
+ * @ORM\Entity
+ */
+class TmTrabajadores
+{
+    /**
+     * @var integer $traid
+     *
+     * @ORM\Column(name="traId", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $traid;
+
+    /**
+     * @var string $tracodigo
+     *
+     * @ORM\Column(name="traCodigo", type="string", length=10, nullable=false)
+     */
+    private $tracodigo;
+
+    /**
+     * @var string $tracedula
+     *
+     * @ORM\Column(name="traCedula", type="string", length=20, nullable=true)
+     */
+    private $tracedula;
+
+    /**
+     * @var string $tranombre
+     *
+     * @ORM\Column(name="traNombre", type="string", length=30, nullable=false)
+     */
+    private $tranombre;
+
+    /**
+     * @var string $tracargo
+     *
+     * @ORM\Column(name="traCargo", type="string", length=20, nullable=true)
+     */
+    private $tracargo;
+
+    /**
+     * @var TmEmpresacontratista
+     *
+     * @ORM\ManyToOne(targetEntity="TmEmpresacontratista")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="ecoId", referencedColumnName="ecoId")
+     * })
+     */
+    private $ecoid;
+
+    /**
+     * @var SysEstadoregistros
+     *
+     * @ORM\ManyToOne(targetEntity="SysEstadoregistros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estId", referencedColumnName="estId")
+     * })
+     */
+    private $estid;
+
+
+}

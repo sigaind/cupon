@@ -1,0 +1,76 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmPlagas
+ *
+ * @ORM\Table(name="TM_Plagas")
+ * @ORM\Entity
+ */
+class TmPlagas
+{
+    /**
+     * @var integer $plaid
+     *
+     * @ORM\Column(name="plaId", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $plaid;
+
+    /**
+     * @var string $planombre
+     *
+     * @ORM\Column(name="plaNombre", type="string", length=20, nullable=false)
+     */
+    private $planombre;
+
+    /**
+     * @var integer $prioridad
+     *
+     * @ORM\Column(name="prioridad", type="smallint", nullable=true)
+     */
+    private $prioridad;
+
+    /**
+     * @var string $plasigla
+     *
+     * @ORM\Column(name="plaSigla", type="string", length=5, nullable=true)
+     */
+    private $plasigla;
+
+    /**
+     * @var Empresa
+     *
+     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="empId", referencedColumnName="empId")
+     * })
+     */
+    private $empid;
+
+    /**
+     * @var SysEstadoregistros
+     *
+     * @ORM\ManyToOne(targetEntity="SysEstadoregistros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estId", referencedColumnName="estId")
+     * })
+     */
+    private $estid;
+
+    /**
+     * @var TmTipoplagas
+     *
+     * @ORM\ManyToOne(targetEntity="TmTipoplagas")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="tplId", referencedColumnName="tplId")
+     * })
+     */
+    private $tplid;
+
+
+}

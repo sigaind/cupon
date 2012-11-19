@@ -1,0 +1,84 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TtCensorhynchophorus
+ *
+ * @ORM\Table(name="TT_CensoRhynchophorus")
+ * @ORM\Entity
+ */
+class TtCensorhynchophorus
+{
+    /**
+     * @var integer $crhyid
+     *
+     * @ORM\Column(name="crhyId", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $crhyid;
+
+    /**
+     * @var integer $crhyconsecutivo
+     *
+     * @ORM\Column(name="crhyConsecutivo", type="integer", nullable=true)
+     */
+    private $crhyconsecutivo;
+
+    /**
+     * @var \DateTime $crhyfecha
+     *
+     * @ORM\Column(name="crhyFecha", type="datetime", nullable=true)
+     */
+    private $crhyfecha;
+
+    /**
+     * @var integer $traid
+     *
+     * @ORM\Column(name="traId", type="integer", nullable=true)
+     */
+    private $traid;
+
+    /**
+     * @var integer $crhynumeromachos
+     *
+     * @ORM\Column(name="crhyNumeroMachos", type="integer", nullable=true)
+     */
+    private $crhynumeromachos;
+
+    /**
+     * @var integer $crhynumerohembras
+     *
+     * @ORM\Column(name="crhyNumeroHembras", type="integer", nullable=true)
+     */
+    private $crhynumerohembras;
+
+    /**
+     * @var boolean $crhymttocebo
+     *
+     * @ORM\Column(name="crhyMttoCebo", type="boolean", nullable=true)
+     */
+    private $crhymttocebo;
+
+    /**
+     * @var boolean $crhymttotrampa
+     *
+     * @ORM\Column(name="crhyMttoTrampa", type="boolean", nullable=true)
+     */
+    private $crhymttotrampa;
+
+    /**
+     * @var TmTramparhynchop
+     *
+     * @ORM\ManyToOne(targetEntity="TmTramparhynchop")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idTrampaRhyncho", referencedColumnName="trhyId")
+     * })
+     */
+    private $idtramparhyncho;
+
+
+}

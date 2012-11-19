@@ -1,0 +1,204 @@
+parameters:
+#    siag.example.class: sigaind\siagBundle\Example
+
+
+
+services:
+    # ...
+    sonata.sigaind.admin.enfermedades:
+        class: Sigaind\siagBundle\Admin\EnfermedadesAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Sanidad', label: Enfermedades }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmEnfermedades
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.lotes:
+        class: Sigaind\siagBundle\Admin\LotesAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Agronomia', label: Lotes }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmLotes
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.trabajadores:
+        class: Sigaind\siagBundle\Admin\TrabajadoresAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Recurso Humano', label: Trabajadores }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmTrabajadores
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.Estadoenfermedad:
+        class: Sigaind\siagBundle\Admin\estadosenferAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Sanidad', label: Estados Enfermedades }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmEstadoenfermedad
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.CategoriaLabores:
+        class: Sigaind\siagBundle\Admin\CategoriaLaboresAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Agronomia', label: Categoria Labores }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmCategorialabores
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.CausasErradicacion:
+        class: Sigaind\siagBundle\Admin\CausasErradicacionAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Sanidad', label: Causas Erradicacion }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmCausaserradicacion
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.cecos:
+        class: Sigaind\siagBundle\Admin\CecosAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'General', label: Centros de Costo }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmCecos
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.EmpresasContratistas:
+        class: Sigaind\siagBundle\Admin\EmpresasContratistasAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Recurso Humano', label: Empresas Contratistas }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmEmpresacontratista
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.EstadoPlaga:
+        class: Sigaind\siagBundle\Admin\EstadoPlagaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Sanidad', label: Estados Plagas }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmEstadoplaga
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.LaboresCampo:
+        class: Sigaind\siagBundle\Admin\LaboresAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Agronomia', label: Labores de Campo }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmLaborescampo
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.Materiales:
+        class: Sigaind\siagBundle\Admin\MaterialesAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Agronomia', label: Materiales }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmMaterial
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.Plagas:
+        class: Sigaind\siagBundle\Admin\PlagasAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Sanidad', label: Plagas }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmPlagas
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.ProductosQuimicos:
+        class: Sigaind\siagBundle\Admin\ProductosQuimicosAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Agronomia', label: Productos Quimicos }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmProductoquimico
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.Siembras:
+        class: Sigaind\siagBundle\Admin\SiembrasAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Agronomia', label: Siembras }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmSiembraprograma
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.Cebos:
+        class: Sigaind\siagBundle\Admin\TiposCebosAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Sanidad', label: Cebos Trampas Rynchophorus }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmTipocebos
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.TipoLabor:
+        class: Sigaind\siagBundle\Admin\TiposLaboresAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Agronomia', label: Tipos Labores }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmTipolabor
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.TipoPlagas:
+        class: Sigaind\siagBundle\Admin\TipoPlagasAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Sanidad', label: Tipo Plagas }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmTipoplagas
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.TipoVinculacion:
+        class: Sigaind\siagBundle\Admin\TipoVinculacionAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Recurso Humano', label: Tipo Vinculacion }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmTipovinculacion
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.TrampasRhynchop:
+        class: Sigaind\siagBundle\Admin\TrampasRhynchopAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Sanidad', label: Trampas Rhynchophorus }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmTramparhynchop
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.UnidadMedida:
+        class: Sigaind\siagBundle\Admin\UnidadMedidaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'General', label: Unidades de Medida }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmUnidadmedida
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.Zonas:
+        class: Sigaind\siagBundle\Admin\ZonasAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Agronomia', label: Zonas Plantacion }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TmZonaplantacion
+            - siagBundle:Admin
+            
+    sonata.sigaind.admin.OrdenAgronomia:
+        class: Sigaind\siagBundle\Admin\OrdenesAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Agronomia', label: Ordenes Agronomia }
+        arguments:
+            - null
+            - sigaind\siagBundle\Entity\TtOrdenagronomia
+            - siagBundle:Admin

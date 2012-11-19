@@ -1,0 +1,41 @@
+
+<div id="cuerpo" >
+
+    <table id='demotable1' class="tablaFiltro">
+      <thead>
+        <tr>
+            <th> ID </th>
+            <th> LOTE </th>
+            <th> LINEA </th>
+            <th> PALMA </th>
+            <th> FECHA </th>
+            <th> CAUSA </th>            
+        </tr>
+      </thead>
+      <tbody id="tblLabores">
+        {% for erradicacion in erradicaciones %}
+            <tr id="{{erradicacion.id}}">
+                    <td> {{erradicacion.id }} </td>
+                    <td> {{erradicacion.lotcodigo | title | trim}} </td>
+                    <td> {{erradicacion.linea }} </td>
+                    <td> {{erradicacion.palma}} </td>
+                    <td> {{erradicacion.fecha | date('d/m/Y')}} </td>
+                    <td> {{erradicacion.cerrnombre | title | trim}} </td>                                      
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">
+                    NO EXISTEN DATOS PARA MOSTRAR
+                </td>
+            </tr>
+        {% endfor %}
+      <tbody>   
+  </table> 
+</div>
+<div id="botones">
+    <button type="reset" onclick="CancelarConsultaLista();">Cancelar</button>
+</div>
+  
+<script type="text/javascript">
+
+</script>

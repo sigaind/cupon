@@ -1,0 +1,15 @@
+parameters:
+    database_driver:   sqlsrv
+    database_host:     bripsti04
+    database_port:     ~
+    database_name:     sigaind
+    database_user:     sa
+    database_password: casaluker
+
+    mailer_transport:  smtp
+    mailer_host:       localhost
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            es
+    secret:            787f2cb1b5da80d3aa995910210610c7a1

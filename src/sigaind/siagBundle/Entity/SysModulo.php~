@@ -1,0 +1,46 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\SysModulo
+ *
+ * @ORM\Table(name="SYS_Modulo")
+ * @ORM\Entity
+ */
+class SysModulo
+{
+    /**
+     * @var integer $modid
+     *
+     * @ORM\Column(name="modId", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $modid;
+
+    /**
+     * @var string $modnombre
+     *
+     * @ORM\Column(name="modNombre", type="string", length=30, nullable=true)
+     */
+    private $modnombre;
+
+    /**
+     * @var integer $menu
+     *
+     * @ORM\Column(name="menu", type="integer", nullable=true)
+     */
+    private $menu;
+
+    /**
+     * @var integer $modulo
+     *
+     * @ORM\Column(name="modulo", type="integer", nullable=true)
+     */
+    private $modulo;
+
+
+}

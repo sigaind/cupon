@@ -1,0 +1,61 @@
+{% extends 'siagBundle::layout.html.twig' %}
+
+{% block title %}Bienvenido{% endblock %}
+
+{% block menu %}
+
+{% endblock %}
+{% block content %}
+
+<form action="{{ path('usuario_login_check') }}" method="post">
+    <table width="654" height="524" border="1" align="center" cellspacing="0"  >
+        <tr>
+            <td width="640" height="516" align="left" background="{{ asset('bundles/sigaind/images/white.png') }}" bgcolor="#FFFFFF" style="background-repeat:no-repeat">
+            <table width="75%" height="289" border="0" align="center" cellspacing="1" bordercolor="#000000">
+                <tr>
+                <td width="70%" height="110" align="right" valign="middle" ><div align="right"><img src="{{ asset('bundles/sigaind/images/nombre.JPG') }}" alt="Nombre Empresa" width="274" height="63" /></div></td>
+                <td width="30%" align="right" valign="top" bgcolor="#FFFFFF"><div align="left"><img src="{{ asset('bundles/sigaind/images/logo2.JPG') }}" alt="Logo" width="86" height="77" /></div></td>
+                </tr>
+                <tr>
+                <td height="196" colspan="2" valign="top">
+                <table width="71%" height="150" 
+                border="0" align="center" cellpadding="3" cellspacing="1" class="forumline">
+                    <!--DWLayoutTable-->
+                    <tbody>
+                    <tr>
+                        <th height="19" colspan="3" align="center" nowrap="nowrap" ></th>
+                    </tr>
+                    <tr>
+                        <td width="71" height="24" align="right" valign="center"><span class="style6"><strong> Usuario</strong>:</span></td>
+                        <td width="228" align="left" valign="center" ><label class="Color1">
+                            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+                        </label></td>
+                        <td width="99" rowspan="4" align="left" valign="center" ><img src="{{ asset('bundles/sigaind/images/icono_usuarios.gif') }}" alt="logeo" width="99" height="90" /></td>
+                        </tr>
+                    <tr>
+                        <td height="11" align="right" valign="center" ><span class="style6"><strong>Clave:</strong></span></td>
+                        <td align="left" valign="center" ><label  class="Color1">
+                          <input type="password" id="password" name="_password" />
+                        </label></td>
+                        </tr>
+                    <tr>
+                        <td height="12" colspan="2" align="left" valign="center" >
+                            {% if error %}
+                                 <div>{{ error.message }}</div>
+                            {% endif %}
+                        </td>
+                        </tr>
+                    <tr valign="middle">
+                        <td height="28" colspan="2" align="center" >                                                        
+                            <input type="submit" name="login" value="Acceder" style="background-color:#fff"/>
+                        </td>
+                        </tr>                    
+                    </tbody>                    
+                </table>
+               </td>
+            </tr>
+            </table></td>
+        </tr>
+    </table>    
+</form>
+{% endblock %}

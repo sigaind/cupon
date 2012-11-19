@@ -1,0 +1,53 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TtProdutoquimicoaplicado
+ *
+ * @ORM\Table(name="TT_ProdutoQuimicoAplicado")
+ * @ORM\Entity
+ */
+class TtProdutoquimicoaplicado
+{
+    /**
+     * @var integer $paplid
+     *
+     * @ORM\Column(name="paplId", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $paplid;
+
+    /**
+     * @var integer $oreid
+     *
+     * @ORM\Column(name="oreId", type="bigint", nullable=true)
+     */
+    private $oreid;
+
+    /**
+     * @var float $paplcantidad
+     *
+     * @ORM\Column(name="paplCantidad", type="decimal", nullable=true)
+     */
+    private $paplcantidad;
+
+    /**
+     * @var \DateTime $paplfecha
+     *
+     * @ORM\Column(name="paplFecha", type="datetime", nullable=true)
+     */
+    private $paplfecha;
+
+    /**
+     * @var integer $supid
+     *
+     * @ORM\Column(name="supId", type="integer", nullable=true)
+     */
+    private $supid;
+
+
+}

@@ -1,0 +1,7 @@
+parameters:
+#    ws.example.class: sigaind\wsBundle\Example
+
+services:
+#    ws.example:
+#        class: %ws.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

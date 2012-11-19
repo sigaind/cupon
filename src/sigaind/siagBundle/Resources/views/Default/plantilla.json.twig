@@ -1,0 +1,6 @@
+{% set perfil %}
+    {% for erradicacion in erradicaciones %}
+        {{ {'id': erradicacion.cerrnombre, 'name': erradicacion.cerrid } }}
+    {% endfor %}
+{% endset %}
+{{ perfil | json_encode }}

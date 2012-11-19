@@ -1,0 +1,130 @@
+<table id='demotable1' class="tablaFiltro">      
+    <tbody id="tblDetalleOrden">
+        <tr>
+                <td> 
+                    Orden ID: {{orden[0].oreid }}
+                </td>
+                <td> 
+                    Fecha Creacion: {{orden[0].orefecha | date('d/m/Y') }}
+                </td>
+        </tr>
+        <tr>
+                <td> 
+                    Labor: {{orden[0].nombre | title | trim }}
+                </td>        
+                <td> 
+                    Lote: {{orden[0].lotcodigo  }}
+                </td>
+        </tr>
+        <tr>
+                <td> 
+                    Fecha Programada de Inicio: {{orden[0].orefechainicio | date('d/m/Y') }}
+                </td>        
+                <td> 
+                    Fecha Programada Fin: {{orden[0].orefechafin | date('d/m/Y') }}
+                </td>
+        </tr>
+        <tr>
+                <td> 
+                    Fecha Real de Inicio: {{orden[0].orefechainicioreal | date('d/m/Y') }}
+                </td>        
+                <td> 
+                    Fecha Real Fin: {{orden[0].orefechafinreal | date('d/m/Y') }}
+                </td>
+        </tr>
+        <tr>
+                <td> 
+                    Cantidad Acumulada: {{orden[0].orecantidadacumulada | number_format(2, ',', '.') }}
+                </td>        
+                <td> 
+                    Supervisor: {{orden[0].tranombre | title | trim }}
+                </td>
+        </tr>
+        <tr>                
+                <td> 
+                    <p id="estadoP">Estado: {% if orden[0].orecerrada == 0 %} Abierta {% else %} Cerrada {% endif %}</p>
+                </td>
+                {% if orden[0].orecerrada == 0 %} 
+                    <td id="estadoImg">
+                        <a href="#" id="imagenCerrar">
+                            <img src="{{ asset('bundles/sigaind/images/cerrarOrden.jpg') }}" alt="Detalles" id="idImagen" onclick="CerrarOrden({{orden[0].oreid }});"/> 
+                        </a>
+                    </td> 
+                {% endif %}
+                <td>
+                    Costo:
+                </td>
+                <td>
+                    $-
+                </td>
+        </tr>
+    <tbody>   
+</table>
+<br>
+<table class="tablaFiltro">
+    <thead>
+        <tr>            
+            <th colspan="8" style="text-align: center"> DETALLE LABORES </th>           
+        </tr>
+      </thead>
+    <thead>
+        <tr>            
+            <th> FECHA LABOR </th>
+            <th> EMPRESA </th>
+            <th> COD TRABAJADOR </th>
+            <th> NOMBRE </th>
+            <th> LINEA INICIAL </th>
+            <th> LINEA FINAL </th>
+            <th> CANTIDAD </th>
+            <th> JORNALES </th>            
+        </tr>
+      </thead>
+      <tbody id="tblLabores">
+        {% for labor in labores %}
+            <tr>
+                    <td> {{labor.lrefecha | date('d/m/Y')}} </td>
+                    <td> {{labor.econombre | title | trim}} </td>
+                    <td> {{labor.tracodigo}} </td>
+                    <td> {{labor.tranombre | title | trim}} </td>
+                    <td> {{labor.lineainicial | default('-')}} </td>
+                    <td> {{labor.lineafinal | default('-')}} </td>
+                    <td> {{labor.lrecantidad | number_format(2, ',', '.')}} </td>
+                    <td> {{labor.lrejornales}} </td>
+            </tr>
+         {% else %}
+            <tr>
+                <td colspan="8">
+                    NO EXISTEN DATOS PARA MOSTRAR
+                </td>
+            </tr>
+        {% endfor %}
+      <tbody> 
+</table>
+
+<br>
+<table class="tablaFiltro">
+    <thead>
+        <tr>            
+            <th colspan="8" style="text-align: center"> PRODUCTOS QUIMICOS </th>           
+        </tr>
+      </thead>
+    <thead>
+        <tr>            
+            <th> PRODUCTO </th>
+            <th> DOSIS </th>
+            <th> CANT TOTAL </th>                        
+        </tr>
+      </thead>
+      <tbody id="tblLabores">        
+            <tr>
+                <td colspan="3">
+                    NO EXISTEN DATOS PARA MOSTRAR
+                </td>
+            </tr>
+      <tbody> 
+</table>
+
+<br>
+<div>
+    <button type="button" onclick="CancelarConsultaLista()">Cancelar</button>
+</div>

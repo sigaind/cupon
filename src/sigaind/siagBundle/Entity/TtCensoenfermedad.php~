@@ -1,0 +1,102 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TtCensoenfermedad
+ *
+ * @ORM\Table(name="TT_CensoEnfermedad")
+ * @ORM\Entity
+ */
+class TtCensoenfermedad
+{
+    /**
+     * @var integer $cenid
+     *
+     * @ORM\Column(name="cenId", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $cenid;
+
+    /**
+     * @var integer $consecutivo
+     *
+     * @ORM\Column(name="consecutivo", type="integer", nullable=true)
+     */
+    private $consecutivo;
+
+    /**
+     * @var \DateTime $cenfecha
+     *
+     * @ORM\Column(name="cenFecha", type="datetime", nullable=false)
+     */
+    private $cenfecha;
+
+    /**
+     * @var integer $lotid
+     *
+     * @ORM\Column(name="lotId", type="integer", nullable=false)
+     */
+    private $lotid;
+
+    /**
+     * @var integer $traid
+     *
+     * @ORM\Column(name="traId", type="integer", nullable=false)
+     */
+    private $traid;
+
+    /**
+     * @var integer $cenlinea
+     *
+     * @ORM\Column(name="cenLinea", type="smallint", nullable=false)
+     */
+    private $cenlinea;
+
+    /**
+     * @var integer $cenpalma
+     *
+     * @ORM\Column(name="cenPalma", type="smallint", nullable=false)
+     */
+    private $cenpalma;
+
+    /**
+     * @var integer $enfid
+     *
+     * @ORM\Column(name="enfId", type="integer", nullable=false)
+     */
+    private $enfid;
+
+    /**
+     * @var integer $eenid
+     *
+     * @ORM\Column(name="eenId", type="integer", nullable=false)
+     */
+    private $eenid;
+
+    /**
+     * @var string $cenobservacion
+     *
+     * @ORM\Column(name="cenObservacion", type="string", length=200, nullable=true)
+     */
+    private $cenobservacion;
+
+    /**
+     * @var string $a11010601
+     *
+     * @ORM\Column(name="a11010601", type="string", length=22, nullable=true)
+     */
+    private $a11010601;
+
+    /**
+     * @var integer $exportado
+     *
+     * @ORM\Column(name="exportado", type="smallint", nullable=true)
+     */
+    private $exportado;
+
+
+}

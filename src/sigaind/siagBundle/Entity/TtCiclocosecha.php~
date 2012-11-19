@@ -1,0 +1,49 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TtCiclocosecha
+ *
+ * @ORM\Table(name="TT_CicloCosecha")
+ * @ORM\Entity
+ */
+class TtCiclocosecha
+{
+    /**
+     * @var integer $ccosid
+     *
+     * @ORM\Column(name="ccosId", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $ccosid;
+
+    /**
+     * @var \DateTime $ccosfechaingreso
+     *
+     * @ORM\Column(name="ccosFechaIngreso", type="date", nullable=true)
+     */
+    private $ccosfechaingreso;
+
+    /**
+     * @var \DateTime $ccosfechasalida
+     *
+     * @ORM\Column(name="ccosFechaSalida", type="date", nullable=true)
+     */
+    private $ccosfechasalida;
+
+    /**
+     * @var TmLotes
+     *
+     * @ORM\ManyToOne(targetEntity="TmLotes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="lotId", referencedColumnName="id")
+     * })
+     */
+    private $lotid;
+
+
+}

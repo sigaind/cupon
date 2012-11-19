@@ -1,0 +1,341 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmOrdenagronomia
+ *
+ * @ORM\Table(name="TM_OrdenAgronomia")
+ * @ORM\Entity
+ */
+class TmOrdenagronomia
+{
+    /**
+     * @var integer $oreid
+     *
+     * @ORM\Column(name="oreId", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $oreid;
+
+    /**
+     * @var integer $empid
+     *
+     * @ORM\Column(name="empId", type="bigint", nullable=true)
+     */
+    private $empid;
+
+    /**
+     * @var \DateTime $orefecha
+     *
+     * @ORM\Column(name="oreFecha", type="datetime", nullable=false)
+     */
+    private $orefecha;
+
+    /**
+     * @var \DateTime $orefechainicio
+     *
+     * @ORM\Column(name="oreFechaInicio", type="datetime", nullable=true)
+     */
+    private $orefechainicio;
+
+    /**
+     * @var \DateTime $orefechafin
+     *
+     * @ORM\Column(name="oreFechaFin", type="datetime", nullable=true)
+     */
+    private $orefechafin;
+
+    /**
+     * @var float $orecantidadacumulada
+     *
+     * @ORM\Column(name="oreCantidadAcumulada", type="decimal", nullable=true)
+     */
+    private $orecantidadacumulada;
+
+    /**
+     * @var float $orediasestimados
+     *
+     * @ORM\Column(name="oreDiasEstimados", type="decimal", nullable=true)
+     */
+    private $orediasestimados;
+
+    /**
+     * @var string $orecerrada
+     *
+     * @ORM\Column(name="oreCerrada", type="string", length=2, nullable=true)
+     */
+    private $orecerrada;
+
+    /**
+     * @var float $orecantidadejecutar
+     *
+     * @ORM\Column(name="oreCantidadEjecutar", type="decimal", nullable=true)
+     */
+    private $orecantidadejecutar;
+
+    /**
+     * @var TmLotes
+     *
+     * @ORM\ManyToOne(targetEntity="TmLotes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="lotId", referencedColumnName="lotId")
+     * })
+     */
+    private $lotid;
+
+    /**
+     * @var TmLaborescampo
+     *
+     * @ORM\ManyToOne(targetEntity="TmLaborescampo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="labId", referencedColumnName="labId")
+     * })
+     */
+    private $labid;
+
+
+
+    /**
+     * Get oreid
+     *
+     * @return integer 
+     */
+    public function getOreid()
+    {
+        return $this->oreid;
+    }
+
+    /**
+     * Set empid
+     *
+     * @param integer $empid
+     * @return TmOrdenagronomia
+     */
+    public function setEmpid($empid)
+    {
+        $this->empid = $empid;
+    
+        return $this;
+    }
+
+    /**
+     * Get empid
+     *
+     * @return integer 
+     */
+    public function getEmpid()
+    {
+        return $this->empid;
+    }
+
+    /**
+     * Set orefecha
+     *
+     * @param \DateTime $orefecha
+     * @return TmOrdenagronomia
+     */
+    public function setOrefecha($orefecha)
+    {
+        $this->orefecha = $orefecha;
+    
+        return $this;
+    }
+
+    /**
+     * Get orefecha
+     *
+     * @return \DateTime 
+     */
+    public function getOrefecha()
+    {
+        return $this->orefecha;
+    }
+
+    /**
+     * Set orefechainicio
+     *
+     * @param \DateTime $orefechainicio
+     * @return TmOrdenagronomia
+     */
+    public function setOrefechainicio($orefechainicio)
+    {
+        $this->orefechainicio = $orefechainicio;
+    
+        return $this;
+    }
+
+    /**
+     * Get orefechainicio
+     *
+     * @return \DateTime 
+     */
+    public function getOrefechainicio()
+    {
+        return $this->orefechainicio;
+    }
+
+    /**
+     * Set orefechafin
+     *
+     * @param \DateTime $orefechafin
+     * @return TmOrdenagronomia
+     */
+    public function setOrefechafin($orefechafin)
+    {
+        $this->orefechafin = $orefechafin;
+    
+        return $this;
+    }
+
+    /**
+     * Get orefechafin
+     *
+     * @return \DateTime 
+     */
+    public function getOrefechafin()
+    {
+        return $this->orefechafin;
+    }
+
+    /**
+     * Set orecantidadacumulada
+     *
+     * @param float $orecantidadacumulada
+     * @return TmOrdenagronomia
+     */
+    public function setOrecantidadacumulada($orecantidadacumulada)
+    {
+        $this->orecantidadacumulada = $orecantidadacumulada;
+    
+        return $this;
+    }
+
+    /**
+     * Get orecantidadacumulada
+     *
+     * @return float 
+     */
+    public function getOrecantidadacumulada()
+    {
+        return $this->orecantidadacumulada;
+    }
+
+    /**
+     * Set orediasestimados
+     *
+     * @param float $orediasestimados
+     * @return TmOrdenagronomia
+     */
+    public function setOrediasestimados($orediasestimados)
+    {
+        $this->orediasestimados = $orediasestimados;
+    
+        return $this;
+    }
+
+    /**
+     * Get orediasestimados
+     *
+     * @return float 
+     */
+    public function getOrediasestimados()
+    {
+        return $this->orediasestimados;
+    }
+
+    /**
+     * Set orecerrada
+     *
+     * @param string $orecerrada
+     * @return TmOrdenagronomia
+     */
+    public function setOrecerrada($orecerrada)
+    {
+        $this->orecerrada = $orecerrada;
+    
+        return $this;
+    }
+
+    /**
+     * Get orecerrada
+     *
+     * @return string 
+     */
+    public function getOrecerrada()
+    {
+        return $this->orecerrada;
+    }
+
+    /**
+     * Set orecantidadejecutar
+     *
+     * @param float $orecantidadejecutar
+     * @return TmOrdenagronomia
+     */
+    public function setOrecantidadejecutar($orecantidadejecutar)
+    {
+        $this->orecantidadejecutar = $orecantidadejecutar;
+    
+        return $this;
+    }
+
+    /**
+     * Get orecantidadejecutar
+     *
+     * @return float 
+     */
+    public function getOrecantidadejecutar()
+    {
+        return $this->orecantidadejecutar;
+    }
+
+    /**
+     * Set lotid
+     *
+     * @param sigaind\siagBundle\Entity\TmLotes $lotid
+     * @return TmOrdenagronomia
+     */
+    public function setLotid(\sigaind\siagBundle\Entity\TmLotes $lotid = null)
+    {
+        $this->lotid = $lotid;
+    
+        return $this;
+    }
+
+    /**
+     * Get lotid
+     *
+     * @return sigaind\siagBundle\Entity\TmLotes 
+     */
+    public function getLotid()
+    {
+        return $this->lotid;
+    }
+
+    /**
+     * Set labid
+     *
+     * @param sigaind\siagBundle\Entity\TmLaborescampo $labid
+     * @return TmOrdenagronomia
+     */
+    public function setLabid(\sigaind\siagBundle\Entity\TmLaborescampo $labid = null)
+    {
+        $this->labid = $labid;
+    
+        return $this;
+    }
+
+    /**
+     * Get labid
+     *
+     * @return sigaind\siagBundle\Entity\TmLaborescampo 
+     */
+    public function getLabid()
+    {
+        return $this->labid;
+    }
+}

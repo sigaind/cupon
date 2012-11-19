@@ -1,0 +1,109 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TtLaboresreportadastemporal
+ *
+ * @ORM\Table(name="TT_LaboresReportadasTemporal")
+ * @ORM\Entity
+ */
+class TtLaboresreportadastemporal
+{
+    /**
+     * @var integer $pdmtid
+     *
+     * @ORM\Column(name="pdmtId", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pdmtid;
+
+    /**
+     * @var integer $oreid
+     *
+     * @ORM\Column(name="oreId", type="bigint", nullable=false)
+     */
+    private $oreid;
+
+    /**
+     * @var integer $ecoid
+     *
+     * @ORM\Column(name="ecoId", type="bigint", nullable=false)
+     */
+    private $ecoid;
+
+    /**
+     * @var \DateTime $pdmtfecha
+     *
+     * @ORM\Column(name="pdmtFecha", type="datetime", nullable=false)
+     */
+    private $pdmtfecha;
+
+    /**
+     * @var integer $traid
+     *
+     * @ORM\Column(name="traId", type="bigint", nullable=false)
+     */
+    private $traid;
+
+    /**
+     * @var integer $labid
+     *
+     * @ORM\Column(name="labId", type="bigint", nullable=false)
+     */
+    private $labid;
+
+    /**
+     * @var integer $lotid
+     *
+     * @ORM\Column(name="lotId", type="bigint", nullable=false)
+     */
+    private $lotid;
+
+    /**
+     * @var float $pdmtcantidad
+     *
+     * @ORM\Column(name="pdmtCantidad", type="decimal", nullable=false)
+     */
+    private $pdmtcantidad;
+
+    /**
+     * @var integer $pdmtjornales
+     *
+     * @ORM\Column(name="pdmtJornales", type="integer", nullable=false)
+     */
+    private $pdmtjornales;
+
+    /**
+     * @var integer $supid
+     *
+     * @ORM\Column(name="supId", type="bigint", nullable=false)
+     */
+    private $supid;
+
+    /**
+     * @var integer $exportado
+     *
+     * @ORM\Column(name="exportado", type="integer", nullable=true)
+     */
+    private $exportado;
+
+    /**
+     * @var integer $lineainicial
+     *
+     * @ORM\Column(name="lineaInicial", type="integer", nullable=true)
+     */
+    private $lineainicial;
+
+    /**
+     * @var integer $lineafinal
+     *
+     * @ORM\Column(name="lineaFinal", type="integer", nullable=true)
+     */
+    private $lineafinal;
+
+
+}

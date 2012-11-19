@@ -1,0 +1,168 @@
+<ul class="menu" id="menu">
+
+{% if((app.user.gusuid.gusuid==1) or (app.user.gusuid.gusuid==2) ) %}
+    <li>
+      
+    <a class="menulink" href="#"> Maestros </a>
+    <ul>
+        <li>
+        <a class="menulink" href="#"> Sanidad Vegetal</a>            
+            <ul>
+            <li> <a class="menulink" href="#" > Enfermedades </a> 
+                <ul>
+                <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmenfermedades_list', {'name': 'Enfermedades'}) }}" >Enfermedades</a></li>
+                <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmestadoenfermedad_list') }}" > Estados</a></li>
+                </ul>
+            </li>
+            <li><a class="menulink" href="#">Plagas</a>
+                <ul>
+                <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmtipoplagas_list')}}" >Tipos de Plagas</a></li>
+                <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmplagas_list')}}" >Plagas</a></li>
+                <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmestadoplaga_list')}}">Estados</a></li>
+                <li></li>
+                </ul>
+            </li>
+            <li><a class="menulink" href="#">Rhynchophorus</a>
+                <ul>
+                    <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmtramparhynchop_list')}}" >Trampas</a></li>
+                    <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmtipocebos_list')}}" >Tipo Cebos</a></li>
+                </ul>
+            </li>
+            <li><a class="menulink" href="#">General</a>
+                <ul>
+                    <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmcausaserradicacion_list')}}" >Causas Erradicacion</a></li>                                               
+                </ul>
+            </li>
+        </ul>
+    </li>    
+    <li>
+        <a class="menulink" href="#"> Agronomia</a>            
+            <ul>
+            {% if((app.user.gusuid.gusuid==1) or (app.user.gusuid.gusuid==3) ) %}
+                <li> <a class="menulink" href="#" > Plantacion </a> 
+                    <ul>
+                        <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmzonaplantacion_list') }}" >Zonas</a></li>
+                        <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmlotes_list') }}" > Lotes</a></li>
+                        <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmmaterial_list') }}" > Materiales</a></li>
+                        <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmsiembraprograma_list') }}" > Siembras</a></li>
+                    </ul>
+                </li>
+             {% endif %}
+             {% if(app.user.gusuid.gusuid==1 ) %}
+                <li><a class="menulink" href="#">Labores</a>
+                    <ul>
+                    <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmcategorialabores_list')}}" >Categorias</a></li>
+                    <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmtipolabor_list')}}" >Labores</a></li>
+                    <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmlaborescampo_list')}}">Categoria de Pago</a></li>
+                    <li></li>
+                    </ul>
+                </li>
+            {% endif %}
+            <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmproductoquimico_list') }}">Prod Quimicos</a> </li>
+            <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmunidadmedida_list') }}">Unidades Medida</a> </li>
+        </ul>
+    </li>
+    {% if((app.user.gusuid.gusuid==1) or (app.user.gusuid.gusuid==2) ) %}
+        <li>
+            <a class="menulink" href="#"> Recurso Humano</a>            
+                <ul>                                        
+                <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmtipovinculacion_list') }}">Tipo Empresas</a> </li>
+                <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmempresacontratista_list') }}">Contratistas</a> </li>
+                <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmtrabajadores_list') }}">Trabajadores</a> </li>
+                <li><a class="menulink" href="{{ path('admin_sigaind_siag_tmcecos_list') }}">CeCos</a> </li>
+            </ul>
+        </li>
+    {% endif %}
+    </ul>
+    </li>
+{% endif %}
+    <li>
+        <a class="menulink" href="#"> Operacionales </a>
+        <ul>
+            <li>
+                <a class="menulink" href="#"> Agronomia</a>            
+                    <ul> 
+                        {% if((app.user.gusuid.gusuid==3) or (app.user.gusuid.gusuid==4) or (app.user.gusuid.gusuid==5)) or (app.user.gusuid.gusuid==1) %}
+                           <li><a class="menulink" href="{{ path('lista_laboresSinAprobar_reportadas') }}">Labores Sin Aprobar</a> </li>
+                        {% endif %} 
+                        {% if((app.user.gusuid.gusuid==3) or (app.user.gusuid.gusuid==2)) or (app.user.gusuid.gusuid==1)%}
+                            <li><a class="menulink" href="{{ path('view_labores_reportadas') }}">Labores Aprobadas</a> </li>
+                        {% endif %} 
+                        {% if((app.user.gusuid.gusuid==3) or (app.user.gusuid.gusuid==1)) %}
+                            <li><a class="menulink" href="{{ path('index_ordenes_agronomia') }}">Ordenes Agronomia</a> </li>
+                        {% endif %}
+                </ul>
+            </li>
+            <li>
+                <a class="menulink" href="#"> Sanidad</a>            
+                    <ul>
+                        {% if((app.user.gusuid.gusuid==3) or (app.user.gusuid.gusuid==5) or (app.user.gusuid.gusuid==1)) %}
+                            <li><a class="menulink" href="{{ path('erradicar_palmas') }}">Palmas erradicadas</a> </li>                    
+                        {% endif %}
+                </ul>
+            </li>
+            <li>
+                <a class="menulink" href="#"> Recurso Humano</a>            
+                    <ul>                                        
+                    <li><a class="menulink" href="#">Liquidar Labores</a> </li>                    
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a class="menulink" href="#"> Informes </a>
+        <ul>
+            <li>
+                <a class="menulink" href="#"> Agronomia</a>            
+                    <ul>                                        
+                    <li><a class="menulink" href="#">Labores Por Trabajador</a> </li>
+                    <li><a class="menulink" href="#">Rendimiento por labor</a> </li>
+                    <li><a class="menulink" href="{{ path('informes_labores_programadas') }}">Programacion de labores</a> </li>
+                </ul>
+            </li>
+            <li>
+                <a class="menulink" href="#"> Sanidad</a>            
+                    <ul>                                        
+                    <li><a class="menulink" href="#">Listado Palmas erradicadas</a> </li>
+                    <li><a class="menulink" href="#">Enfermedad Linea-Palma</a> </li>
+                    <li><a class="menulink" href="#">Enfermedad Vs Lote</a> </li>
+                    <li><a class="menulink" href="#">Plaga Vs Lote</a> </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a class="menulink" href="#"> Informes SIG</a>
+        <ul>
+            <li>
+                <a class="menulink" href="#"> Agronomia</a>            
+                    <ul>                                        
+                    <li><a class="menulink" href="#">Materiales por lote</a> </li>
+                    <li><a class="menulink" href="#">Siembras</a> </li>
+                    <li><a class="menulink" href="#">Avance Labores</a> </li>
+                </ul>
+            </li>
+            <li>
+                <a class="menulink" href="#"> Sanidad</a>            
+                    <ul>                                        
+                    <li><a class="menulink" href="#">Enfermeda Vs Lote</a> </li>
+                    <li><a class="menulink" href="#">Enfermeda Por Palma</a> </li>
+                    <li><a class="menulink" href="#">Plagas Vs Lote</a> </li>
+                    <li><a class="menulink" href="#">Focos Plagas</a> </li>
+                    <li><a class="menulink" href="#">Palmas Erradicadas</a> </li>
+                </ul>
+            </li>
+            <li>
+                <a class="menulink" href="#"> Produccion</a>            
+                    <ul>                                        
+                    <li><a class="menulink" href="#">Produccion por lote</a> </li>
+                    <li><a class="menulink" href="#">Produccion Por Palma</a> </li>                    
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <a class="menulink" href="{{ path('usuario_logout') }}"> Salir </a>    
+    </li>
+</ul>                                                                                   

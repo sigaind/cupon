@@ -1,0 +1,49 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmMaterial
+ *
+ * @ORM\Table(name="TM_Material")
+ * @ORM\Entity
+ */
+class TmMaterial
+{
+    /**
+     * @var integer $matid
+     *
+     * @ORM\Column(name="matId", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $matid;
+
+    /**
+     * @var string $matcodigo
+     *
+     * @ORM\Column(name="matCodigo", type="string", length=50, nullable=true)
+     */
+    private $matcodigo;
+
+    /**
+     * @var string $matnombre
+     *
+     * @ORM\Column(name="matNombre", type="string", length=50, nullable=false)
+     */
+    private $matnombre;
+
+    /**
+     * @var SysEstadoregistros
+     *
+     * @ORM\ManyToOne(targetEntity="SysEstadoregistros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estId", referencedColumnName="estId")
+     * })
+     */
+    private $estid;
+
+
+}

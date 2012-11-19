@@ -1,0 +1,106 @@
+wsBundle_homepage:
+    pattern:  /prueba
+    defaults: { _controller: wsBundle:TablaMaestras:index, _format: json }
+    requirements:
+      _method:  GET
+      _format: JSON
+      
+      
+Lotes:
+    pattern:  /Lotes
+    defaults: { _controller: wsBundle:TablaMaestras:lotes, _format: json }
+    requirements:
+      _method:  GET
+      _format: JSON 
+
+Labores:
+    pattern:  /Labores
+    defaults: { _controller: wsBundle:TablaMaestras:labores, _format: json }
+    requirements:
+      _method:  GET
+      _format: JSON 
+
+EmpresaContratista:
+    pattern:  /EmpresaContratista
+    defaults: { _controller: wsBundle:TablaMaestras:EmpresaContratista, _format: json }
+    requirements:
+      _method:  GET
+      _format: JSON
+      
+Trabajadores:
+    pattern:  /Trabajadores
+    defaults: { _controller: wsBundle:TablaMaestras:Trabajadores, _format: json }
+    requirements:
+      _method:  GET
+      _format: JSON
+      
+ProductoQuimico:
+    pattern:  /ProductoQuimico
+    defaults: { _controller: wsBundle:TablaMaestras:ProductoQuimico, _format: json }
+    requirements:
+      _method:  GET
+      _format: JSON
+      
+Plaga:
+    pattern:  /Plaga
+    defaults: { _controller: wsBundle:TablaMaestras:Plaga, _format: json }
+    requirements:
+      _method:  GET
+      _format: JSON
+      
+EstadoPlaga:
+    pattern:  /EstadoPlaga
+    defaults: { _controller: wsBundle:TablaMaestras:EstadoPlaga, _format: json }
+    requirements:
+      _method:  GET
+      _format: JSON
+      
+Enfermedades:
+    pattern:  /Enfermedades
+    defaults: { _controller: wsBundle:TablaMaestras:Enfermedades, _format: json }
+    requirements:
+      _method:  GET
+      _format: JSON
+      
+EstadoEnfermedad:
+    pattern:  /EstadoEnfermedad
+    defaults: { _controller: wsBundle:TablaMaestras:EstadoEnfermedad, _format: json }
+    requirements:
+      _method:  GET
+      _format: JSON
+      
+OrdenAgronomia:
+    pattern:  /OrdenAgronomia
+    defaults: { _controller: wsBundle:TablaMaestras:OrdenAgronomia, _format: json }
+    requirements:
+      _method:  GET
+      _format: JSON
+      
+usuarios:
+    pattern:  /usuarios
+    defaults: { _controller: wsBundle:TablaMaestras:usuarios, _format: json }
+    requirements:
+      _method:  GET
+      _format: JSON
+      
+permisos:
+    pattern:  /permisos
+    defaults: { _controller: wsBundle:TablaMaestras:permisos, _format: json }
+    requirements:
+      _method:  GET
+      _format: JSON
+      
+LaboresPDA:
+    pattern:  /InsertarLaboresReportadas
+    defaults: { _controller: wsBundle:TablasOperacionales:InsertarLaboresReportadas }
+    
+Insertar_censo_plagas:
+    pattern:  /InsertarCensoPlaga
+    defaults: { _controller: wsBundle:TablasOperacionales:InsertarCensoPlaga }
+
+#_api_v1_get_user_locations:
+#    pattern:  /v1/locations/{_locale}.{_format}
+#    defaults: { _controller: SurgeworksApiBundle:Locations:getUserLocations, _format: json}
+#    requirements:
+#      _method:  GET
+#      _format: JSON

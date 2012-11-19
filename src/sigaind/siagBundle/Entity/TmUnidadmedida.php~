@@ -1,0 +1,49 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmUnidadmedida
+ *
+ * @ORM\Table(name="TM_UnidadMedida")
+ * @ORM\Entity
+ */
+class TmUnidadmedida
+{
+    /**
+     * @var string $unicodigo
+     *
+     * @ORM\Column(name="uniCodigo", type="string", length=10, nullable=true)
+     */
+    private $unicodigo;
+
+    /**
+     * @var string $uninombre
+     *
+     * @ORM\Column(name="uniNombre", type="string", length=20, nullable=false)
+     */
+    private $uninombre;
+
+    /**
+     * @var string $unisigla
+     *
+     * @ORM\Column(name="uniSigla", type="string", length=8, nullable=false)
+     */
+    private $unisigla;
+
+    /**
+     * @var TmUnidadmedida
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="TmUnidadmedida")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="uniId", referencedColumnName="uniId")
+     * })
+     */
+    private $uniid;
+
+
+}

@@ -1,0 +1,79 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmTipolabor
+ *
+ * @ORM\Table(name="TM_TipoLabor")
+ * @ORM\Entity
+ */
+class TmTipolabor
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $codigo
+     *
+     * @ORM\Column(name="codigo", type="string", length=50, nullable=false)
+     */
+    private $codigo;
+
+    /**
+     * @var string $nombre
+     *
+     * @ORM\Column(name="nombre", type="string", length=50, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var Empresa
+     *
+     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="empresa_id", referencedColumnName="empId")
+     * })
+     */
+    private $empresa;
+
+    /**
+     * @var SysEstadoregistros
+     *
+     * @ORM\ManyToOne(targetEntity="SysEstadoregistros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estadoregistro_id", referencedColumnName="estId")
+     * })
+     */
+    private $estadoregistro;
+
+    /**
+     * @var TmCategorialabores
+     *
+     * @ORM\ManyToOne(targetEntity="TmCategorialabores")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="catagorialabor_id", referencedColumnName="id")
+     * })
+     */
+    private $catagorialabor;
+
+    /**
+     * @var TmUnidadmedida
+     *
+     * @ORM\ManyToOne(targetEntity="TmUnidadmedida")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="unidadmedida_id", referencedColumnName="uniId")
+     * })
+     */
+    private $unidadmedida;
+
+
+}

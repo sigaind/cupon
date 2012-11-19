@@ -1,0 +1,76 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmEstadoenfermedad
+ *
+ * @ORM\Table(name="TM_EstadoEnfermedad")
+ * @ORM\Entity
+ */
+class TmEstadoenfermedad
+{
+    /**
+     * @var integer $eenid
+     *
+     * @ORM\Column(name="eenId", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $eenid;
+
+    /**
+     * @var string $eennombre
+     *
+     * @ORM\Column(name="eenNombre", type="string", length=100, nullable=false)
+     */
+    private $eennombre;
+
+    /**
+     * @var string $eensigla
+     *
+     * @ORM\Column(name="eenSigla", type="string", length=4, nullable=false)
+     */
+    private $eensigla;
+
+    /**
+     * @var integer $prioridad
+     *
+     * @ORM\Column(name="prioridad", type="smallint", nullable=true)
+     */
+    private $prioridad;
+
+    /**
+     * @var TmEnfermedades
+     *
+     * @ORM\ManyToOne(targetEntity="TmEnfermedades")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="enfId", referencedColumnName="enfId")
+     * })
+     */
+    private $enfid;
+
+    /**
+     * @var Empresa
+     *
+     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="empId", referencedColumnName="empId")
+     * })
+     */
+    private $empid;
+
+    /**
+     * @var SysEstadoregistros
+     *
+     * @ORM\ManyToOne(targetEntity="SysEstadoregistros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estId", referencedColumnName="estId")
+     * })
+     */
+    private $estid;
+
+
+}

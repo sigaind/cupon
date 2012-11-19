@@ -1,0 +1,65 @@
+{% extends 'siagBundle::layoutMaestra.html.twig' %}
+
+{% block title %}Aprobar Labores{% endblock %}
+
+{% block head %}
+
+<script src="{{ asset('bundles/sigaind/js/table.filter.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/sigaind/js/agronomia/LaboresReportadasTemp.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        
+        $('#demotable1').tableFilter();
+    });
+</script>
+{% endblock %}
+    
+{% block content %}
+<div id="cuerpo" >
+
+    <table id='demotable1' class="tablaFiltro">
+      <thead>
+        <tr>
+            <th> ID </th>
+            <th> FECHA </th>
+            <th> COOPERATIVA </th>
+            <th> COD TRAB </th>
+            <th> TRABAJADOR </th>
+            <th> LABOR </th>
+            <th> LOTE </th>
+            <th> CANTIDAD </th>
+            <th> JORNALES </th>
+            <th> L. INICIAL </th>
+            <th> L. FINAL </th>
+            <th> APROBAR </th>
+            <th> ELIM </th>
+        </tr>
+      </thead>
+      <tbody id="tblLabores">
+        {% for labor in labores %}
+            <tr id="{{labor.pdmtid}}">
+                    <td> {{labor.pdmtid }} </td>
+                    <td> {{labor.pdmtfecha | date('d/m/Y')}} </td>
+                    <td> {{labor.econombre | title | trim}} </td>
+                    <td> {{labor.tracodigo}} </td>
+                    <td> {{labor.tranombre | title | trim}} </td>
+                    <td> {{labor.nombre | title | trim}} </td>
+                    <td> {{labor.lotcodigo}} </td>
+                    <td> {{labor.pdmtcantidad | number_format(2, ',', '.')}} </td>
+                    <td> {{labor.pdmtjornales}} </td>
+                    <td> {{labor.lineainicial | default('-')}} </td>
+                    <td> {{labor.lineafinal | default('-')}} </td>                    
+                    <td> <input type="checkbox" id="aprobar_{{labor.pdmtid}}" value="{{labor.pdmtid}}"> </td>
+                    <td id="idTd"> <img src="{{ asset('bundles/sigaind/images/eliminar.png') }}" alt="Eliminar" id="idImagen" onclick="borrarLaborTamporal(this);"/> </td>
+
+            </tr>
+        {% endfor %}
+      <tbody>   
+  </table> 
+</div>
+<div id="botones">
+    <button type="button" onclick="AprobarLabores()">Aprobar</button>
+    <button type="reset" >Cancelar</button>
+</div>
+  
+{% endblock %}

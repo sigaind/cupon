@@ -1,0 +1,105 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TtOrdenagronomia
+ *
+ * @ORM\Table(name="TT_OrdenAgronomia")
+ * @ORM\Entity
+ */
+class TtOrdenagronomia
+{
+    /**
+     * @var integer $oreid
+     *
+     * @ORM\Column(name="oreId", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $oreid;
+
+    /**
+     * @var integer $empid
+     *
+     * @ORM\Column(name="empId", type="bigint", nullable=true)
+     */
+    private $empid;
+
+    /**
+     * @var \DateTime $orefecha
+     *
+     * @ORM\Column(name="oreFecha", type="datetime", nullable=false)
+     */
+    private $orefecha;
+
+    /**
+     * @var integer $labid
+     *
+     * @ORM\Column(name="labId", type="bigint", nullable=true)
+     */
+    private $labid;
+
+    /**
+     * @var \DateTime $orefechainicio
+     *
+     * @ORM\Column(name="oreFechaInicio", type="datetime", nullable=true)
+     */
+    private $orefechainicio;
+
+    /**
+     * @var \DateTime $orefechafin
+     *
+     * @ORM\Column(name="oreFechaFin", type="datetime", nullable=true)
+     */
+    private $orefechafin;
+
+    /**
+     * @var float $orecantidadacumulada
+     *
+     * @ORM\Column(name="oreCantidadAcumulada", type="decimal", nullable=true)
+     */
+    private $orecantidadacumulada;
+
+    /**
+     * @var float $orediasestimados
+     *
+     * @ORM\Column(name="oreDiasEstimados", type="decimal", nullable=true)
+     */
+    private $orediasestimados;
+
+    /**
+     * @var string $orecerrada
+     *
+     * @ORM\Column(name="oreCerrada", type="string", length=2, nullable=true)
+     */
+    private $orecerrada;
+
+    /**
+     * @var float $orecantidadejecutar
+     *
+     * @ORM\Column(name="oreCantidadEjecutar", type="decimal", nullable=true)
+     */
+    private $orecantidadejecutar;
+
+    /**
+     * @var integer $supid
+     *
+     * @ORM\Column(name="supId", type="bigint", nullable=true)
+     */
+    private $supid;
+
+    /**
+     * @var TmLotes
+     *
+     * @ORM\ManyToOne(targetEntity="TmLotes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="lotId", referencedColumnName="id")
+     * })
+     */
+    private $lotid;
+
+
+}

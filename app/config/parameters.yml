@@ -1,0 +1,14 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: '3306'
+    database_name: sigaind
+    database_user: root
+    database_password: sigaind
+    mailer_transport: smtp
+    mailer_host: localhost
+    mailer_user: null
+    mailer_password: null
+    locale: es
+    secret: 787f2cb1b5da80d3aa995910210610c7a1
+    database_path: null

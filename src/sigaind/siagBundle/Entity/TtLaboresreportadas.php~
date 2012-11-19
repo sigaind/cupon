@@ -1,0 +1,88 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TtLaboresreportadas
+ *
+ * @ORM\Table(name="TT_LaboresReportadas")
+ * @ORM\Entity
+ */
+class TtLaboresreportadas
+{
+    /**
+     * @var integer $lrepid
+     *
+     * @ORM\Column(name="lrepId", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $lrepid;
+
+    /**
+     * @var integer $oreid
+     *
+     * @ORM\Column(name="oreId", type="bigint", nullable=true)
+     */
+    private $oreid;
+
+    /**
+     * @var integer $ecoid
+     *
+     * @ORM\Column(name="ecoId", type="integer", nullable=true)
+     */
+    private $ecoid;
+
+    /**
+     * @var integer $traid
+     *
+     * @ORM\Column(name="traId", type="integer", nullable=true)
+     */
+    private $traid;
+
+    /**
+     * @var integer $labid
+     *
+     * @ORM\Column(name="labId", type="integer", nullable=true)
+     */
+    private $labid;
+
+    /**
+     * @var integer $lotid
+     *
+     * @ORM\Column(name="lotId", type="integer", nullable=true)
+     */
+    private $lotid;
+
+    /**
+     * @var \DateTime $lrefecha
+     *
+     * @ORM\Column(name="lreFecha", type="datetime", nullable=true)
+     */
+    private $lrefecha;
+
+    /**
+     * @var float $lrecantidad
+     *
+     * @ORM\Column(name="lreCantidad", type="decimal", nullable=true)
+     */
+    private $lrecantidad;
+
+    /**
+     * @var float $lrejornales
+     *
+     * @ORM\Column(name="lreJornales", type="decimal", nullable=true)
+     */
+    private $lrejornales;
+
+    /**
+     * @var integer $supid
+     *
+     * @ORM\Column(name="supId", type="bigint", nullable=true)
+     */
+    private $supid;
+
+
+}

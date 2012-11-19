@@ -1,0 +1,48 @@
+
+    <table id='demotable1' class="tablaFiltro">
+      <thead>
+        <tr>
+            <th> ID </th>            
+            <th> ORDEN </th>
+            <th> FECHA </th>
+            <th> COOPERATIVA </th>
+            <th> COD TRAB </th>
+            <th> TRABAJADOR </th>
+            <th> LABOR </th>
+            <th> LOTE </th>
+            <th> CANTIDAD </th>
+            <th> JORNALES </th>
+            <th> SUPERVISOR </th>
+            <th> ELIM </th>
+        </tr>
+      </thead>
+      <tbody id="tblLabores">
+        {% for labor in labores %}
+            <tr id="{{labor.lrepid}}">
+                    <td> {{labor.lrepid }} </td>
+                    <td> {{labor.oreid }} </td>
+                    <td> {{labor.lrefecha | date('d/m/Y')}} </td>
+                    <td> {{labor.econombre | title | trim}} </td>
+                    <td> {{labor.tracodigo}} </td>
+                    <td> {{labor.tranombre | title | trim}} </td>
+                    <td> {{labor.nombre | title | trim}} </td>
+                    <td> {{labor.lotcodigo}} </td>
+                    <td> {{labor.lrecantidad | number_format(2, ',', '.')}} </td>
+                    <td> {{labor.lrejornales}} </td>                    
+                    <td> {{labor.supervisor | title | trim}} </td>                    
+                    <td id="idTd">
+                        {% if labor.exportado == 0 %}
+                           <img src="{{ asset('bundles/sigaind/images/eliminar.png') }}" alt="Eliminar" id="idImagen" onclick="borrarLabor(this);"/> 
+                        {% endif %}
+                    </td>
+
+            </tr>
+         {% else %}
+            <tr>
+                <td>
+                    NO EXISTEN DATOS PARA MOSTRAR
+                </td>
+            </tr>
+        {% endfor %}
+      <tbody>   
+  </table> 

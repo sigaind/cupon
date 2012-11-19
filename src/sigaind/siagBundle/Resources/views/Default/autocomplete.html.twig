@@ -1,0 +1,8 @@
+[{% for dato in datos %}
+    {% if loop.first %} 
+        {"id":"{{dato.id}}", "label":"{{dato.value}}", "value":"{{dato.value}}"}
+    {% else %}
+        ,{"id":"{{dato.id}}", "label":"{{dato.value}}", "value":"{{dato.value}}"}
+    {% endif %}
+    
+{% endfor %}]

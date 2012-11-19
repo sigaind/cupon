@@ -1,0 +1,77 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\SysUsuarios
+ *
+ * @ORM\Table(name="SYS_usuarios")
+ * @ORM\Entity
+ */
+class SysUsuarios
+{
+    /**
+     * @var integer $usuid
+     *
+     * @ORM\Column(name="usuId", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $usuid;
+
+    /**
+     * @var string $updalogin
+     *
+     * @ORM\Column(name="updaLogin", type="string", length=50, nullable=true)
+     */
+    private $updalogin;
+
+    /**
+     * @var string $usrpasword
+     *
+     * @ORM\Column(name="usrPasword", type="string", length=50, nullable=true)
+     */
+    private $usrpasword;
+
+    /**
+     * @var integer $cenid
+     *
+     * @ORM\Column(name="cenId", type="integer", nullable=true)
+     */
+    private $cenid;
+
+    /**
+     * @var integer $empid
+     *
+     * @ORM\Column(name="empId", type="integer", nullable=true)
+     */
+    private $empid;
+
+    /**
+     * @var integer $traid
+     *
+     * @ORM\Column(name="traId", type="integer", nullable=true)
+     */
+    private $traid;
+
+    /**
+     * @var integer $estid
+     *
+     * @ORM\Column(name="estId", type="smallint", nullable=true)
+     */
+    private $estid;
+
+    /**
+     * @var SysGrupousuarios
+     *
+     * @ORM\ManyToOne(targetEntity="SysGrupousuarios")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="gusuId", referencedColumnName="gusuId")
+     * })
+     */
+    private $gusuid;
+
+
+}

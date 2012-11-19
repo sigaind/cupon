@@ -1,0 +1,77 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\SysGrupousuarios
+ *
+ * @ORM\Table(name="SYS_GrupoUsuarios")
+ * @ORM\Entity
+ */
+class SysGrupousuarios
+{
+    /**
+     * @var integer $gusuid
+     *
+     * @ORM\Column(name="gusuId", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $gusuid;
+
+    /**
+     * @var string $gusunombre
+     *
+     * @ORM\Column(name="gusuNombre", type="string", length=30, nullable=true)
+     */
+    private $gusunombre;
+
+    /**
+     * @var boolean $gusulectura
+     *
+     * @ORM\Column(name="gusuLectura", type="boolean", nullable=true)
+     */
+    private $gusulectura;
+
+    /**
+     * @var boolean $gusuescritura
+     *
+     * @ORM\Column(name="gusuEscritura", type="boolean", nullable=true)
+     */
+    private $gusuescritura;
+
+    /**
+     * @var boolean $gusuupdate
+     *
+     * @ORM\Column(name="gusuUpdate", type="boolean", nullable=true)
+     */
+    private $gusuupdate;
+
+    /**
+     * @var boolean $gusudelete
+     *
+     * @ORM\Column(name="gusuDelete", type="boolean", nullable=true)
+     */
+    private $gusudelete;
+
+    /**
+     * @var integer $empid
+     *
+     * @ORM\Column(name="empId", type="integer", nullable=true)
+     */
+    private $empid;
+
+    /**
+     * @var SysModulo
+     *
+     * @ORM\ManyToOne(targetEntity="SysModulo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="modId", referencedColumnName="modId")
+     * })
+     */
+    private $modid;
+
+
+}

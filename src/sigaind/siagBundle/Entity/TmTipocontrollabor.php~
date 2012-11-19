@@ -1,0 +1,32 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmTipocontrollabor
+ *
+ * @ORM\Table(name="TM_TipoControlLabor")
+ * @ORM\Entity
+ */
+class TmTipocontrollabor
+{
+    /**
+     * @var integer $tcoid
+     *
+     * @ORM\Column(name="tcoId", type="smallint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $tcoid;
+
+    /**
+     * @var string $tcounidad
+     *
+     * @ORM\Column(name="tcoUnidad", type="string", length=30, nullable=false)
+     */
+    private $tcounidad;
+
+
+}

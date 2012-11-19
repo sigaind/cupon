@@ -1,0 +1,94 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmEmpresacontratista
+ *
+ * @ORM\Table(name="TM_EmpresaContratista")
+ * @ORM\Entity
+ */
+class TmEmpresacontratista
+{
+    /**
+     * @var integer $ecoid
+     *
+     * @ORM\Column(name="ecoId", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $ecoid;
+
+    /**
+     * @var string $ecocodigo
+     *
+     * @ORM\Column(name="ecoCodigo", type="string", length=10, nullable=false)
+     */
+    private $ecocodigo;
+
+    /**
+     * @var string $econombre
+     *
+     * @ORM\Column(name="ecoNombre", type="string", length=50, nullable=false)
+     */
+    private $econombre;
+
+    /**
+     * @var string $econit
+     *
+     * @ORM\Column(name="ecoNit", type="string", length=20, nullable=false)
+     */
+    private $econit;
+
+    /**
+     * @var string $ecorepresentante
+     *
+     * @ORM\Column(name="ecoRepresentante", type="string", length=50, nullable=false)
+     */
+    private $ecorepresentante;
+
+    /**
+     * @var string $econitrepresentante
+     *
+     * @ORM\Column(name="ecoNitRepresentante", type="string", length=20, nullable=true)
+     */
+    private $econitrepresentante;
+
+    /**
+     * @var float $ecoprocentajereteiva
+     *
+     * @ORM\Column(name="ecoProcentajeReteIva", type="decimal", nullable=false)
+     */
+    private $ecoprocentajereteiva;
+
+    /**
+     * @var integer $ecoreteivacalculado
+     *
+     * @ORM\Column(name="ecoReteIvaCalculado", type="integer", nullable=true)
+     */
+    private $ecoreteivacalculado;
+
+    /**
+     * @var Empresa
+     *
+     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="empId", referencedColumnName="empId")
+     * })
+     */
+    private $empid;
+
+    /**
+     * @var SysEstadoregistros
+     *
+     * @ORM\ManyToOne(targetEntity="SysEstadoregistros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estId", referencedColumnName="estId")
+     * })
+     */
+    private $estid;
+
+
+}

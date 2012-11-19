@@ -1,0 +1,60 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\SysAuditoria
+ *
+ * @ORM\Table(name="SYS_Auditoria")
+ * @ORM\Entity
+ */
+class SysAuditoria
+{
+    /**
+     * @var integer $audid
+     *
+     * @ORM\Column(name="audId", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $audid;
+
+    /**
+     * @var \DateTime $audfecha
+     *
+     * @ORM\Column(name="audFecha", type="datetime", nullable=true)
+     */
+    private $audfecha;
+
+    /**
+     * @var integer $updaid
+     *
+     * @ORM\Column(name="updaId", type="integer", nullable=true)
+     */
+    private $updaid;
+
+    /**
+     * @var integer $llaveprimaria
+     *
+     * @ORM\Column(name="llavePrimaria", type="bigint", nullable=true)
+     */
+    private $llaveprimaria;
+
+    /**
+     * @var string $nmtabla
+     *
+     * @ORM\Column(name="nmTabla", type="string", length=20, nullable=true)
+     */
+    private $nmtabla;
+
+    /**
+     * @var string $tipomovimiento
+     *
+     * @ORM\Column(name="tipoMovimiento", type="string", length=2, nullable=true)
+     */
+    private $tipomovimiento;
+
+
+}

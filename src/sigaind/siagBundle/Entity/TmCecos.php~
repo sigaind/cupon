@@ -1,0 +1,59 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmCecos
+ *
+ * @ORM\Table(name="TM_cecos")
+ * @ORM\Entity
+ */
+class TmCecos
+{
+    /**
+     * @var integer $cecid
+     *
+     * @ORM\Column(name="cecId", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $cecid;
+
+    /**
+     * @var string $ceccodigo
+     *
+     * @ORM\Column(name="cecCodigo", type="string", length=50, nullable=false)
+     */
+    private $ceccodigo;
+
+    /**
+     * @var string $cecnombre
+     *
+     * @ORM\Column(name="cecNombre", type="string", length=100, nullable=false)
+     */
+    private $cecnombre;
+
+    /**
+     * @var SysEstadoregistros
+     *
+     * @ORM\ManyToOne(targetEntity="SysEstadoregistros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estadoregistro_id", referencedColumnName="estId")
+     * })
+     */
+    private $estadoregistro;
+
+    /**
+     * @var Empresa
+     *
+     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="empresa_id", referencedColumnName="empId")
+     * })
+     */
+    private $empresa;
+
+
+}

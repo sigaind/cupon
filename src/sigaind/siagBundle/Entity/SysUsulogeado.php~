@@ -1,0 +1,53 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\SysUsulogeado
+ *
+ * @ORM\Table(name="SYS_usuLogeado")
+ * @ORM\Entity
+ */
+class SysUsulogeado
+{
+    /**
+     * @var string $idregistro
+     *
+     * @ORM\Column(name="idRegistro", type="string", length=10, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idregistro;
+
+    /**
+     * @var integer $usuid
+     *
+     * @ORM\Column(name="usuId", type="integer", nullable=true)
+     */
+    private $usuid;
+
+    /**
+     * @var string $usunombre
+     *
+     * @ORM\Column(name="usuNombre", type="string", length=60, nullable=true)
+     */
+    private $usunombre;
+
+    /**
+     * @var integer $empid
+     *
+     * @ORM\Column(name="empId", type="integer", nullable=true)
+     */
+    private $empid;
+
+    /**
+     * @var \DateTime $fecha
+     *
+     * @ORM\Column(name="fecha", type="datetime", nullable=true)
+     */
+    private $fecha;
+
+
+}

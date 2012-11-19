@@ -1,0 +1,94 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmCategoriapago
+ *
+ * @ORM\Table(name="TM_CategoriaPago")
+ * @ORM\Entity
+ */
+class TmCategoriapago
+{
+    /**
+     * @var integer $empid
+     *
+     * @ORM\Column(name="empId", type="bigint", nullable=false)
+     */
+    private $empid;
+
+    /**
+     * @var integer $labid
+     *
+     * @ORM\Column(name="labId", type="bigint", nullable=true)
+     */
+    private $labid;
+
+    /**
+     * @var string $catcodigo
+     *
+     * @ORM\Column(name="catCodigo", type="string", length=50, nullable=true)
+     */
+    private $catcodigo;
+
+    /**
+     * @var string $catnombre
+     *
+     * @ORM\Column(name="catNombre", type="string", length=100, nullable=false)
+     */
+    private $catnombre;
+
+    /**
+     * @var float $cattareaminima
+     *
+     * @ORM\Column(name="catTareaMinima", type="decimal", nullable=false)
+     */
+    private $cattareaminima;
+
+    /**
+     * @var float $catvalorajusteunidad
+     *
+     * @ORM\Column(name="catValorAjusteUnidad", type="decimal", nullable=false)
+     */
+    private $catvalorajusteunidad;
+
+    /**
+     * @var float $catvalorajusteunidadextra
+     *
+     * @ORM\Column(name="catValorAjusteUnidadExtra", type="decimal", nullable=false)
+     */
+    private $catvalorajusteunidadextra;
+
+    /**
+     * @var integer $estid
+     *
+     * @ORM\Column(name="estId", type="smallint", nullable=true)
+     */
+    private $estid;
+
+    /**
+     * @var TmCategoriapago
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="TmCategoriapago")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="catId", referencedColumnName="catId")
+     * })
+     */
+    private $catid;
+
+    /**
+     * @var TmRangosiembra
+     *
+     * @ORM\ManyToOne(targetEntity="TmRangosiembra")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="ranId", referencedColumnName="ranId")
+     * })
+     */
+    private $ranid;
+
+
+}

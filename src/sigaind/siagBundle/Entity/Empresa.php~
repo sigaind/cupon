@@ -1,0 +1,126 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\Empresa
+ *
+ * @ORM\Table(name="Empresa")
+ * @ORM\Entity
+ */
+class Empresa
+{
+    /**
+     * @var string $empcodigo
+     *
+     * @ORM\Column(name="empCodigo", type="string", length=50, nullable=true)
+     */
+    private $empcodigo;
+
+    /**
+     * @var string $paiid
+     *
+     * @ORM\Column(name="paiId", type="string", length=50, nullable=false)
+     */
+    private $paiid;
+
+    /**
+     * @var string $ciuid
+     *
+     * @ORM\Column(name="ciuId", type="string", length=50, nullable=false)
+     */
+    private $ciuid;
+
+    /**
+     * @var string $empnit
+     *
+     * @ORM\Column(name="empNit", type="string", length=50, nullable=false)
+     */
+    private $empnit;
+
+    /**
+     * @var string $empnombre
+     *
+     * @ORM\Column(name="empNombre", type="string", length=50, nullable=false)
+     */
+    private $empnombre;
+
+    /**
+     * @var string $empdireccion
+     *
+     * @ORM\Column(name="empDireccion", type="string", length=50, nullable=false)
+     */
+    private $empdireccion;
+
+    /**
+     * @var string $emptelefonos
+     *
+     * @ORM\Column(name="empTelefonos", type="string", length=50, nullable=true)
+     */
+    private $emptelefonos;
+
+    /**
+     * @var string $empfax
+     *
+     * @ORM\Column(name="empFax", type="string", length=50, nullable=true)
+     */
+    private $empfax;
+
+    /**
+     * @var string $empemail
+     *
+     * @ORM\Column(name="empEmail", type="string", length=50, nullable=true)
+     */
+    private $empemail;
+
+    /**
+     * @var string $emprepresentantelegal
+     *
+     * @ORM\Column(name="empRepresentanteLegal", type="string", length=50, nullable=false)
+     */
+    private $emprepresentantelegal;
+
+    /**
+     * @var float $empsalariominimo
+     *
+     * @ORM\Column(name="empSalarioMinimo", type="decimal", nullable=true)
+     */
+    private $empsalariominimo;
+
+    /**
+     * @var float $empmumd
+     *
+     * @ORM\Column(name="empMuMd", type="decimal", nullable=true)
+     */
+    private $empmumd;
+
+    /**
+     * @var float $empajustedominicales
+     *
+     * @ORM\Column(name="empAjusteDominicales", type="decimal", nullable=true)
+     */
+    private $empajustedominicales;
+
+    /**
+     * @var integer $estadoregistroId
+     *
+     * @ORM\Column(name="estadoregistro_id", type="smallint", nullable=true)
+     */
+    private $estadoregistroId;
+
+    /**
+     * @var Empresa
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Empresa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="empId", referencedColumnName="empId")
+     * })
+     */
+    private $empid;
+
+
+}

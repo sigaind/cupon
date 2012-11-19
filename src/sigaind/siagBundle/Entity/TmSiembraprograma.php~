@@ -1,0 +1,52 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmSiembraprograma
+ *
+ * @ORM\Table(name="TM_SiembraPrograma")
+ * @ORM\Entity
+ */
+class TmSiembraprograma
+{
+    /**
+     * @var integer $simid
+     *
+     * @ORM\Column(name="simId", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $simid;
+
+    /**
+     * @var string $simnombre
+     *
+     * @ORM\Column(name="simNombre", type="string", length=10, nullable=false)
+     */
+    private $simnombre;
+
+    /**
+     * @var Empresa
+     *
+     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="empId", referencedColumnName="empId")
+     * })
+     */
+    private $empid;
+
+    /**
+     * @var SysEstadoregistros
+     *
+     * @ORM\ManyToOne(targetEntity="SysEstadoregistros")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="estId", referencedColumnName="estId")
+     * })
+     */
+    private $estid;
+
+
+}

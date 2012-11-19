@@ -1,0 +1,49 @@
+<?php
+
+namespace sigaind\siagBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * sigaind\siagBundle\Entity\TmTipocebos
+ *
+ * @ORM\Table(name="TM_TipoCebos")
+ * @ORM\Entity
+ */
+class TmTipocebos
+{
+    /**
+     * @var integer $cebid
+     *
+     * @ORM\Column(name="cebId", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $cebid;
+
+    /**
+     * @var string $cebnombre
+     *
+     * @ORM\Column(name="cebNombre", type="string", length=30, nullable=true)
+     */
+    private $cebnombre;
+
+    /**
+     * @var string $cebdescripcion
+     *
+     * @ORM\Column(name="cebDescripcion", type="string", length=150, nullable=true)
+     */
+    private $cebdescripcion;
+
+    /**
+     * @var Empresa
+     *
+     * @ORM\ManyToOne(targetEntity="Empresa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="empId", referencedColumnName="empId")
+     * })
+     */
+    private $empid;
+
+
+}
